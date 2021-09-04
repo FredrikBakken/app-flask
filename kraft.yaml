@@ -1,0 +1,35 @@
+specification: '0.5'
+name: python3
+unikraft:
+  version: '0.4'
+  kconfig:
+    - CONFIG_LIBUK9P=y
+    - CONFIG_LIB9PFS=y
+    - CONFIG_LIBDEVFS=y
+    - CONFIG_LIBDEVFS_AUTOMOUNT=y
+    - CONFIG_LIBVFSCORE_AUTOMOUNT_ROOTFS=y
+    - CONFIG_LIBVFSCORE_ROOTFS_9PFS=y
+    - CONFIG_LIBUKLIBPARAM=y
+targets:
+  - architecture: x86_64
+    platform: kvm
+libraries:
+  pthread-embedded: '0.4'
+  lwip: '0.4'
+  zlib: '0.4'
+  libuuid: '0.4'
+  newlib: '0.4'
+  python3:
+    version: '0.4'
+    kconfig:
+      - CONFIG_LIBPYTHON3=y
+      - CONFIG_LIBPYTHON3_EXTENSIONS=y
+      - CONFIG_LIBPYTHON3_EXTENSION_EXPAT=y
+      - CONFIG_LIBPYTHON3_EXTENSION_LIBMPDEC=y
+      - CONFIG_LIBPYTHON3_EXTENSION_UUID=y
+      - CONFIG_LIBPYTHON3_EXTENSION_ZLIB=y
+      - CONFIG_LIBPYTHON3_MAIN_FUNCTION=y
+volumes:
+  fs0:
+    driver: 9pfs
+    source: ./minrootfs.tgz
