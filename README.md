@@ -52,6 +52,11 @@ sudo qemu-system-x86_64 \
     -nographic
 ```
 
+You should now have a running instance of Python Flask within a Unikraft unikernel! Access your favorite browser and open the URL: http://172.44.0.2:5000/. If everything works as expected, you will be greeted by the following message:
+```
+Hello, World!
+```
+
 Make sure to remove the network configuration after the application has stopped:
 ```
 sudo ip l set dev virbr0 down
