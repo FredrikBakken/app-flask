@@ -1,7 +1,7 @@
 specification: '0.5'
 name: python3
 unikraft:
-  version: '0.4'
+  version: usoc21
   kconfig:
     - CONFIG_LIBUK9P=y
     - CONFIG_LIB9PFS=y
@@ -14,13 +14,13 @@ targets:
   - architecture: x86_64
     platform: kvm
 libraries:
-  pthread-embedded: '0.4'
-  lwip: '0.4'
-  zlib: '0.4'
-  libuuid: '0.4'
-  newlib: '0.4'
+  pthread-embedded: staging
+  lwip: staging
+  zlib: staging
+  libuuid: staging
+  newlib: staging
   python3:
-    version: '0.4'
+    version: staging
     kconfig:
       - CONFIG_LIBPYTHON3=y
       - CONFIG_LIBPYTHON3_EXTENSIONS=y
@@ -32,4 +32,4 @@ libraries:
 volumes:
   fs0:
     driver: 9pfs
-    source: ./minrootfs.tgz
+    source: ./flask-fs.tgz
