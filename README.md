@@ -23,11 +23,12 @@ Use `make menuconfig` to select the following configurations:
     1. `Python 3`
         - `Provide main function`
         - `Extensions`
-    2. `vfscore: Configuration`
+    2. `libuuid`
+    3. `vfscore: Configuration`
         - `Automatically mount a root filesystem (/)`
             - `9PFS`
 
-Before building the application, make sure that `unikraft` is in the `usoc` branch and that the dependencies are on the `staging` branch.
+Before building the application, make sure that `unikraft` is in the `staging` branch and that the dependencies are also on the `staging` branch.
 
 Build the application with `make`.
 
